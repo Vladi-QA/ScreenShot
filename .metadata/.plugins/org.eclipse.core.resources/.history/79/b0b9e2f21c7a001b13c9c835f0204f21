@@ -1,0 +1,21 @@
+package ScreenShot_One;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+public class TestScr extends Initialization{
+	
+	@BeforeMethod
+	public void start() {
+		initializationOne();
+	}
+	@AfterMethod
+	public void finish() {
+		driver.quit();
+	}
+
+	@TestScr
+	public void test_One() {
+		
+	}
+}

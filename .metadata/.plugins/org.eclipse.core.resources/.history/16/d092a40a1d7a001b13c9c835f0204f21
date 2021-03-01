@@ -1,0 +1,7 @@
+package ScreenShot_One;
+
+import org.testng.ITestListener;
+
+public class CustomerListener extends initialization implements ITestListener{
+
+}

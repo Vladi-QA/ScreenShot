@@ -1,0 +1,36 @@
+package ScreenShot_One; 
+
+ 
+
+import java.io.File;
+import java.io.IOException;
+
+import org.aspectj.util.FileUtil;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Initialization {
+public static WebDriver driver;
+public void initializationOne () {
+	System.setProperty(
+            "webdriver.chrome.driver",
+            "C:\\chrome\\new\\sypernew\\New folder\\chromedriver.exe");
+	driver=new ChromeDriver();
+	driver.manage().deleteAllCookies();
+	driver.get("http://ukr.net");
+}
+public void fail(String testMethodName) {
+	File ScFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	try {
+		FileUtil.copyFile(ScFile, new File("/Users/localadmin/ScreenShot/ScreenShot_ProjectOne"+
+	testMethodName+"_"+".png"));
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+}
+}
+ 
